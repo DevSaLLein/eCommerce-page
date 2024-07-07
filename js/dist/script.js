@@ -1,6 +1,5 @@
 "use strict";
 window.addEventListener('load', () => {
-    console.log('hello');
     const menu = () => {
         const menuButton = document.querySelector("[rel='js-menu-button']");
         menuButton?.addEventListener('click', handleClickButtonMenu);

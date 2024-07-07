@@ -1,7 +1,5 @@
 window.addEventListener('load', (): void => {
    
-    console.log('hello');
-
     const menu = (): void => {
         const menuButton: HTMLBodyElement | null = document.querySelector("[rel='js-menu-button']");
      
