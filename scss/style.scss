@@ -17,15 +17,12 @@ html {
 body {
   color: $primary-color; 
   user-select: none;
-  max-width: 100vw;
-  min-height: 100vh;
 }
 
 @media screen and (max-width: 920px) {
 
   html {
     font-size: 14px;
-    overflow-x: hidden;
   }
 }
 
@@ -103,7 +100,6 @@ nav {
         border: none;
         background-color: transparent;
         cursor: pointer;
-
       }
 
       img {
@@ -133,35 +129,38 @@ nav {
 
     .blur-menu-mobile-active {
       opacity: 1;
-      height: 100vh;
-      width: 100vw;
+      min-height: 200vh;
+      width: 200vw;
       background-color: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(5px);
     }
 
     div {      
       section:first-child {
-        align-items: end;
-        
+        align-items: center;
+        gap: .8rem;
+
         header {
           order: 1;
+
+          h3 {
+            font-size: 2rem;
+          }
         }
 
         ul {
-          position: absolute;
+          position: fixed;
           flex-direction: column;
-          width: 60%;
-          height: 100vh;
+          width: 250px;
+          min-height: 200vh;
           top: 0;
           left: -100%;
           background-color: white;
           color: transparent;
           align-items: start;
           font-weight: 800;
-          text-align: center;
-          padding: 150px 50px 0 50px;
+          padding: 150px 50px 0 10px;
           font-size: 2rem;
-          gap: 2rem;
           color: $primary-color;
           box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
           z-index: 1;
@@ -189,9 +188,7 @@ nav {
         }
         
         .hamburger svg {
-          /* The size of the SVG defines the overall size */
           height: 3em;
-          /* Define the transition for transforming the SVG */
           transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
         }
         
@@ -201,7 +198,6 @@ nav {
           stroke-linecap: round;
           stroke-linejoin: round;
           stroke-width: 3;
-          /* Define the transition for transforming the Stroke */
           transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
                       stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -219,6 +215,14 @@ nav {
           stroke-dashoffset: -32.42;
         }
       }
+
+      section:last-child {
+        gap: 1rem;
+  
+        img {
+          width: 30px;
+        }
+      }
     }
   }
 }
@@ -230,7 +234,7 @@ main {
   justify-content: center;
   align-items: center;
   bottom: 0;
-  top: 120px;
+  top: 100px;
   min-width: 100vw;
 
   > div {
@@ -253,6 +257,7 @@ main {
 
         img {
           width: 100%;
+          height: 100%;
           position: absolute;
           transition: transform .3s ease;
           cursor: zoom-in;
@@ -375,6 +380,76 @@ main {
           font-weight: 700;
           font-size: 1rem;
           cursor: pointer;
+        }
+      }
+    }
+
+    @media screen and (max-width: 920px){
+      gap: 1rem;
+      width: 100vw;
+      padding-top: 0px;
+
+      > section:first-child {
+        width: 100vw;
+
+        > div:first-child {
+          
+          > figure {
+            height: 400px;
+          }
+        }
+
+        figure {
+          position: relative;
+          overflow: hidden;
+          height: 150px;
+        }
+
+        > div:last-child {
+          display: flex;
+        }
+      }
+
+      > section:last-child {
+        min-width: 100vw;
+        padding: 1rem;
+
+        > span {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          > div {
+            gap: .5rem;
+  
+            > p {
+
+              &:first-child {
+                font-size: 1.5rem;
+              }
+  
+              &:last-child {
+                padding: 5px 10px;
+              }
+            }
+          }
+  
+          > p {
+            font-size: 1.1rem;
+          }
+        }
+        
+        > div:last-child {
+          gap: .5rem;
+  
+          > div {
+            width: 100%;
+            height: 40px;
+          }
+  
+          > button {
+            max-height: 40px;
+          }
         }
       }
     }
