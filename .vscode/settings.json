@@ -1,0 +1,7 @@
+{
+    "editor.tabSize": 5,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+}
