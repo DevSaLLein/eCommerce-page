@@ -17,6 +17,8 @@ html {
 body {
   color: $primary-color; 
   user-select: none;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 nav {
