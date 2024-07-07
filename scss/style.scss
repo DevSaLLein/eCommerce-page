@@ -37,7 +37,7 @@ nav {
     opacity: 0;
   }
 
-  div {
+  > div {
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -46,11 +46,11 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.096);
     margin: 0 auto;
   
-    section {
+    > section {
       display: flex;
     }
 
-    section:first-child {
+    > section:first-child {
       gap: 2rem;
       align-items: end;
 
@@ -92,14 +92,53 @@ nav {
       }
     }
 
-    section:last-child {
+    > section:last-child {
       gap: 1.5rem;
       align-items: center;
 
-      button {
+      > button {
         border: none;
         background-color: transparent;
         cursor: pointer;
+        position: relative;
+        z-index: 1;
+
+        > div {
+          background-color: white;
+          box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.166);
+          position: absolute;
+          cursor: default;
+          width: 300px;
+          height: 400px;
+          left: 50%;
+          top: 0px;
+          z-index: -1;
+          opacity: 0;
+          transform: translateX(-50%);
+          transition: all .3s ease;
+
+          > h4 {
+            padding: 10px;
+            display: block;
+            text-align: left;
+            border-bottom: 2px solid #3333330c;
+          }
+
+          > div {
+            height: 90%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y: scroll;
+            overflow-x: hidden;
+          }
+        }
+
+        .cart-menu-active {
+          opacity: 1;
+          top: 50px;
+        }
       }
 
       img {
@@ -215,12 +254,33 @@ nav {
           stroke-dashoffset: -32.42;
         }
       }
-
-      section:last-child {
+      > section:last-child {
         gap: 1rem;
+  
+        > button {
+          position: static;
+          z-index: 0;  
+          > div {
+            position: absolute;
+            width: 90%;
+            height: 500px;
+  
+            > h4 {
+              font-size: 1.5rem;
+            }
+          }
+  
+          .cart-menu-active {
+            top: 70px;
+          }
+        }
   
         img {
           width: 30px;
+        }
+  
+        > img {
+          border-radius: 100%;
         }
       }
     }

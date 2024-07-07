@@ -31,7 +31,7 @@ nav .blur-menu-mobile {
   display: none;
   opacity: 0;
 }
-nav div {
+nav > div {
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -40,33 +40,33 @@ nav div {
   border-bottom: 1px solid rgba(0, 0, 0, 0.096);
   margin: 0 auto;
 }
-nav div section {
+nav > div > section {
   display: flex;
 }
-nav div section:first-child {
+nav > div > section:first-child {
   gap: 2rem;
   align-items: end;
 }
-nav div section:first-child header h3 {
+nav > div > section:first-child header h3 {
   font-size: 2.8rem;
   font-weight: 900;
 }
-nav div section:first-child label {
+nav > div > section:first-child label {
   display: none;
   z-index: 2;
 }
-nav div section:first-child ul {
+nav > div > section:first-child ul {
   display: flex;
   gap: 1rem;
 }
-nav div section:first-child ul li {
+nav > div > section:first-child ul li {
   cursor: pointer;
   padding: 0.7rem;
   text-align: center;
   position: relative;
   transition: all 0.2s ease;
 }
-nav div section:first-child ul li:hover::after {
+nav > div > section:first-child ul li:hover::after {
   content: "";
   position: absolute;
   bottom: -34px;
@@ -76,19 +76,54 @@ nav div section:first-child ul li:hover::after {
   background-color: orange;
   transition: all 0.2s ease;
 }
-nav div section:last-child {
+nav > div > section:last-child {
   gap: 1.5rem;
   align-items: center;
 }
-nav div section:last-child button {
+nav > div > section:last-child > button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
-nav div section:last-child img {
+nav > div > section:last-child > button > div {
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.166);
+  position: absolute;
+  cursor: default;
+  width: 300px;
+  height: 400px;
+  left: 50%;
+  top: 0px;
+  z-index: -1;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+nav > div > section:last-child > button > div > h4 {
+  padding: 10px;
+  display: block;
+  text-align: left;
+  border-bottom: 2px solid #3333330c;
+}
+nav > div > section:last-child > button > div > div {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+nav > div > section:last-child > button .cart-menu-active {
+  opacity: 1;
+  top: 50px;
+}
+nav > div > section:last-child img {
   width: 33px;
 }
-nav div section:last-child > img {
+nav > div > section:last-child > img {
   border-radius: 100%;
 }
 @media screen and (max-width: 920px) {
@@ -174,11 +209,29 @@ nav div section:last-child > img {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
   }
-  nav div section:last-child {
+  nav div > section:last-child {
     gap: 1rem;
   }
-  nav div section:last-child img {
+  nav div > section:last-child > button {
+    position: static;
+    z-index: 0;
+  }
+  nav div > section:last-child > button > div {
+    position: absolute;
+    width: 90%;
+    height: 500px;
+  }
+  nav div > section:last-child > button > div > h4 {
+    font-size: 1.5rem;
+  }
+  nav div > section:last-child > button .cart-menu-active {
+    top: 70px;
+  }
+  nav div > section:last-child img {
     width: 30px;
+  }
+  nav div > section:last-child > img {
+    border-radius: 100%;
   }
 }
 
