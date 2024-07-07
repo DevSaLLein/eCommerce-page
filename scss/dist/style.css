@@ -16,7 +16,7 @@ body {
   user-select: none;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 767px) {
   html {
     font-size: 14px;
   }
@@ -66,15 +66,21 @@ nav > div > section:first-child ul li {
   position: relative;
   transition: all 0.2s ease;
 }
-nav > div > section:first-child ul li:hover::after {
+nav > div > section:first-child ul li:hover {
+  transition: all 0.2s ease;
+}
+nav > div > section:first-child ul li::before {
+  transition: all 0.2s ease;
   content: "";
   position: absolute;
   bottom: -34px;
+  width: 0;
   left: 0;
   height: 3px;
-  width: 100%;
   background-color: orange;
-  transition: all 0.2s ease;
+}
+nav > div > section:first-child ul li:hover::before {
+  width: 100%;
 }
 nav > div > section:last-child {
   gap: 1.5rem;
@@ -126,7 +132,20 @@ nav > div > section:last-child img {
 nav > div > section:last-child > img {
   border-radius: 100%;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
+  nav > div > section:first-child {
+    gap: 1rem;
+    align-items: end;
+    z-index: 2;
+  }
+  nav > div > section:first-child > header > h3 {
+    font-size: 2.4rem;
+  }
+  nav > div > section:first-child > ul {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 767px) {
   nav .blur-menu-mobile {
     position: absolute;
     background-color: transparent;
@@ -242,7 +261,7 @@ main {
   justify-content: center;
   align-items: center;
   bottom: 0;
-  top: 100px;
+  top: 120px;
   min-width: 100vw;
 }
 main > div {
@@ -364,11 +383,47 @@ main > div > section:last-child > div:last-child > button {
   font-size: 1rem;
   cursor: pointer;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
   main > div {
+    flex-wrap: nowrap;
+  }
+  main > div > section {
+    max-width: 400px;
+    gap: 0.4rem;
+    min-height: 550px;
+    justify-content: space-around;
+  }
+  main > div > section figure {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 150px;
+  }
+  main > div > section:last-child > div:last-child {
+    gap: 0.5rem;
+  }
+  main > div > section:last-child > div:last-child > div {
+    width: 100%;
+    height: 40px;
+  }
+  main > div > section:last-child > div:last-child > button {
+    max-height: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  main {
+    position: absolute;
     gap: 1rem;
+    top: 100px;
     width: 100vw;
-    padding-top: 0px;
+  }
+  main > div {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  main > div > section {
+    min-height: initial;
+    justify-content: initial;
   }
   main > div > section:first-child {
     width: 100vw;
