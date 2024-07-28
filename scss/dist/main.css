@@ -1,0 +1,237 @@
+main {
+  flex-wrap: wrap;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  top: 120px;
+  min-width: 100vw;
+}
+main > div {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 50px;
+}
+main > div > section {
+  max-width: 400px;
+  gap: 0.2rem;
+}
+main > div > section figure {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 120px;
+  border-radius: 10px;
+}
+main > div > section figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.5, -1.5, 0.5, 2);
+  cursor: zoom-in;
+}
+main > div > section figure img:hover {
+  transform: scale(1.2);
+}
+main > div > section:first-child {
+  display: flex;
+  flex-direction: column;
+}
+main > div > section:first-child > div:first-child > figure {
+  height: 400px;
+  width: 100%;
+}
+main > div > section:first-child > div:last-child {
+  display: flex;
+  gap: inherit;
+}
+main > div > section:last-child {
+  display: flex;
+  flex-direction: column;
+}
+main > div > section:last-child > div:first-child > h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
+}
+main > div > section:last-child > div:first-child > h1 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+main > div > section:last-child > p {
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+main > div > section:last-child > span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+main > div > section:last-child > span > div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+main > div > section:last-child > span > div > p {
+  display: inline;
+}
+main > div > section:last-child > span > div > p:first-child {
+  font-size: 2rem;
+}
+main > div > section:last-child > span > div > p:last-child {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+main > div > section:last-child > span > p {
+  width: max-content;
+  text-decoration: line-through;
+}
+main > div > section:last-child > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+main > div > section:last-child > div:last-child > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #e4e4e4;
+  font-size: 1.5rem;
+}
+main > div > section:last-child > div:last-child > div > button {
+  border: none;
+  font-size: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  color: orange;
+}
+main > div > section:last-child > div:last-child > button {
+  flex: 1;
+  max-height: 50px;
+  text-wrap: nowrap;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: orange;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+main > div > section:last-child > div:last-child > button:hover {
+  background-color: #d78c01;
+}
+@media screen and (max-width: 1024px) {
+  main > div {
+    flex-wrap: nowrap;
+  }
+  main > div > section {
+    max-width: 400px;
+    gap: 0.4rem;
+    min-height: 550px;
+    justify-content: space-around;
+  }
+  main > div > section figure {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 150px;
+  }
+  main > div > section:last-child > div:last-child {
+    gap: 0.5rem;
+  }
+  main > div > section:last-child > div:last-child > div {
+    width: 100%;
+    height: 40px;
+  }
+  main > div > section:last-child > div:last-child > button {
+    max-height: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  main {
+    position: absolute;
+    gap: 1rem;
+    top: 100px;
+    width: 100vw;
+    min-height: auto;
+    background-color: pink;
+  }
+  main > div {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  main > div > section {
+    min-height: initial;
+    justify-content: initial;
+    max-width: 100vw;
+  }
+  main > div > section:first-child {
+    width: 100vw;
+  }
+  main > div > section:first-child > div:first-child > figure {
+    width: 100vw;
+    height: 700px;
+  }
+  main > div > section:first-child figure {
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+  }
+  main > div > section:first-child > div:last-child {
+    display: flex;
+  }
+  main > div > section:first-child > div:last-child > figure {
+    flex: 1;
+    height: 200px;
+  }
+  main > div > section:last-child {
+    min-width: 100vw;
+    padding: 1rem;
+  }
+  main > div > section:last-child > span {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  main > div > section:last-child > span > div {
+    gap: 0.5rem;
+  }
+  main > div > section:last-child > span > div > p:first-child {
+    font-size: 1.5rem;
+  }
+  main > div > section:last-child > span > div > p:last-child {
+    padding: 5px 10px;
+  }
+  main > div > section:last-child > span > p {
+    font-size: 1.1rem;
+  }
+  main > div > section:last-child > div:last-child {
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+  main > div > section:last-child > div:last-child > div {
+    height: 40px;
+    max-width: 30%;
+  }
+  main > div > section:last-child > div:last-child > button {
+    flex: 1;
+    width: 100%;
+    max-height: 40px;
+  }
+}

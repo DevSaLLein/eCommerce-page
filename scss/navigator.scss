@@ -1,0 +1,289 @@
+nav {
+     width: 100%;
+     position: fixed;
+     background-color: white;
+     z-index: 1;
+   
+     .blur-menu-mobile {
+       display: none;
+       opacity: 0;
+     }
+   
+     > div {
+       display: flex;
+       justify-content: space-between;
+       width: 90%;
+       height: 100%;
+       padding: 2rem 0;
+       border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+       margin: 0 auto;
+     
+       > section {
+         display: flex;
+       }
+   
+       > section:first-child {
+         gap: 2rem;
+         align-items: end;
+   
+         header {
+           h3 {
+             font-size: 2.8rem;
+             font-weight: 900;
+           }
+         }
+   
+         label {
+           display: none;
+           z-index: 2;
+         }
+   
+         ul {
+           display: flex;
+           gap: 1rem;
+   
+   
+           li {
+             cursor: pointer;
+             padding: .7rem;
+             text-align: center;
+             position: relative;
+             transition: all .2s ease;
+   
+             &:hover {
+               transition: all .2s ease;
+             }
+             
+             &::before {
+               transition: all .2s ease;
+               content: '';
+               position: absolute;
+               bottom: -34px;
+               width: 0;
+               left: 0;
+               height: 3px;
+               background-color: orange;
+             }
+   
+             &:hover::before {
+               width: 100%;
+             }
+           }
+         }
+       }
+   
+       > section:last-child {
+         gap: 1.5rem;
+         align-items: center;
+   
+         > button {
+           border: none;
+           background-color: transparent;
+           cursor: pointer;
+           position: relative;
+           z-index: 1;
+   
+           > div {
+             background-color: white;
+             box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.166);
+             position: absolute;
+             cursor: default;
+             width: 300px;
+             height: 400px;
+             left: 50%;
+             top: 0px;
+             z-index: -1;
+             opacity: 0;
+             transform: translateX(-50%);
+             transition: all .3s ease;
+   
+             > h4 {
+               padding: 10px;
+               display: block;
+               text-align: left;
+               border-bottom: 2px solid #3333330c;
+             }
+   
+             > div {
+               height: 90%;
+               width: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               overflow-y: scroll;
+               overflow-x: hidden;
+             }
+           }
+   
+           .cart-menu-active {
+             opacity: 1;
+             top: 50px;
+           }
+         }
+   
+         img {
+           width: 33px;
+         }
+   
+         > img {
+           border-radius: 100%;
+         }
+       }
+     }
+   
+     @media screen and (max-width: 1024px){
+   
+       > div {
+         > section:first-child {
+           gap: 1rem;
+           align-items: end;
+           z-index: 2;
+   
+           > header {
+             > h3 {
+               font-size: 2.4rem;
+             } 
+           }
+   
+           > ul {
+             font-size: .8rem;
+           }
+         }
+       }
+     }
+   
+     @media screen and (max-width: 767px) {
+   
+       .blur-menu-mobile {
+         position: absolute;
+         background-color: transparent;
+         backdrop-filter: blur(5px);
+         width: 0;
+         display: block;
+         height: 0;
+         transition: 
+           width 0s, height 0s, 
+           opacity .3s, background-color .3s, backdrop-filter .3s ease
+         ;
+       }
+   
+       .blur-menu-mobile-active {
+         opacity: 1;
+         min-height: 200vh;
+         width: 200vw;
+         background-color: rgba(255, 255, 255, 0.1);
+         backdrop-filter: blur(5px);
+       }
+   
+       div {      
+         section:first-child {
+           align-items: center;
+           gap: .8rem;
+   
+           header {
+             order: 1;
+   
+             h3 {
+               font-size: 2rem;
+             }
+           }
+   
+           ul {
+             position: fixed;
+             flex-direction: column;
+             width: 250px;
+             min-height: 200vh;
+             top: 0;
+             left: -100%;
+             background-color: white;
+             color: transparent;
+             align-items: start;
+             font-weight: 800;
+             padding: 150px 50px 0 10px;
+             font-size: 2rem;
+             color: $primary-color;
+             box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+             z-index: 1;
+             transition: all .3s ease
+           }
+   
+           .active-menu {
+             left: 0;
+           }
+           
+           label {
+             width: 40px;
+             display: block;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+           }
+   
+           .hamburger {
+             cursor: pointer;
+           }
+           
+           .hamburger input {
+             display: none;
+           }
+           
+           .hamburger svg {
+             height: 3em;
+             transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+           }
+           
+           .line {
+             fill: none;
+             stroke: $primary-color;
+             stroke-linecap: round;
+             stroke-linejoin: round;
+             stroke-width: 3;
+             transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                         stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+           }
+           
+           .line-top-bottom {
+             stroke-dasharray: 12 63;
+           }
+           
+           .hamburger input:checked + svg {
+             transform: rotate(-45deg);
+           }
+           
+           .hamburger input:checked + svg .line-top-bottom {
+             stroke-dasharray: 20 300;
+             stroke-dashoffset: -32.42;
+           }
+         }
+         > section:last-child {
+           gap: 1rem;
+     
+           > button {
+             position: static;
+             z-index: 0;  
+             > div {
+               position: absolute;
+               width: 90%;
+               height: 500px;
+     
+               > h4 {
+                 font-size: 1.5rem;
+               }
+             }
+     
+             .cart-menu-active {
+               top: 70px;
+             }
+           }
+     
+           img {
+             width: 30px;
+           }
+     
+           > img {
+             border-radius: 100%;
+           }
+         }
+       }
+     }
+   }

@@ -274,19 +274,21 @@ main > div {
 }
 main > div > section {
   max-width: 400px;
-  gap: 0.4rem;
+  gap: 0.2rem;
 }
 main > div > section figure {
   position: relative;
   overflow: hidden;
   width: 200px;
   height: 120px;
+  border-radius: 10px;
 }
 main > div > section figure img {
   width: 100%;
   height: 100%;
+  border-radius: inherit;
   position: absolute;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.5, -1.5, 0.5, 2);
   cursor: zoom-in;
 }
 main > div > section figure img:hover {
@@ -321,6 +323,7 @@ main > div > section:last-child > div:first-child > h1 {
 }
 main > div > section:last-child > p {
   margin-bottom: 20px;
+  max-width: 350px;
 }
 main > div > section:last-child > span {
   display: flex;
@@ -362,7 +365,7 @@ main > div > section:last-child > div:last-child > div {
   width: 120px;
   height: 40px;
   border-radius: 10px;
-  background-color: gray;
+  background-color: #e4e4e4;
   font-size: 1.5rem;
 }
 main > div > section:last-child > div:last-child > div > button {
@@ -370,6 +373,8 @@ main > div > section:last-child > div:last-child > div > button {
   font-size: inherit;
   background-color: transparent;
   cursor: pointer;
+  font-weight: 700;
+  color: orange;
 }
 main > div > section:last-child > div:last-child > button {
   flex: 1;
@@ -382,6 +387,10 @@ main > div > section:last-child > div:last-child > button {
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
+  transition: 0.4s ease;
+}
+main > div > section:last-child > div:last-child > button:hover {
+  background-color: #d78c01;
 }
 @media screen and (max-width: 1024px) {
   main > div {
@@ -416,6 +425,8 @@ main > div > section:last-child > div:last-child > button {
     gap: 1rem;
     top: 100px;
     width: 100vw;
+    min-height: auto;
+    background-color: pink;
   }
   main > div {
     padding: 0;
@@ -424,12 +435,14 @@ main > div > section:last-child > div:last-child > button {
   main > div > section {
     min-height: initial;
     justify-content: initial;
+    max-width: 100vw;
   }
   main > div > section:first-child {
     width: 100vw;
   }
   main > div > section:first-child > div:first-child > figure {
-    height: 400px;
+    width: 100vw;
+    height: 700px;
   }
   main > div > section:first-child figure {
     position: relative;
@@ -438,6 +451,10 @@ main > div > section:last-child > div:last-child > button {
   }
   main > div > section:first-child > div:last-child {
     display: flex;
+  }
+  main > div > section:first-child > div:last-child > figure {
+    flex: 1;
+    height: 200px;
   }
   main > div > section:last-child {
     min-width: 100vw;
@@ -462,12 +479,15 @@ main > div > section:last-child > div:last-child > button {
   }
   main > div > section:last-child > div:last-child {
     gap: 0.5rem;
+    flex-wrap: nowrap;
   }
   main > div > section:last-child > div:last-child > div {
-    width: 100%;
     height: 40px;
+    max-width: 30%;
   }
   main > div > section:last-child > div:last-child > button {
+    flex: 1;
+    width: 100%;
     max-height: 40px;
   }
 }
