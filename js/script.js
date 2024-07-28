@@ -1,4 +1,4 @@
-"use strict";
+import { quantityProduct } from "./quantityProduct.js";
 window.addEventListener('load', () => {
     const menus = () => {
         const menuButton = document.querySelector("[rel='js-menu-button']");
@@ -17,4 +17,5 @@ window.addEventListener('load', () => {
         modalCart?.classList.toggle('cart-menu-active');
     };
     menus();
+    quantityProduct();
 });

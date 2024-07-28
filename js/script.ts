@@ -1,3 +1,5 @@
+import { quantityProduct } from "./quantityProduct.js";
+
 window.addEventListener('load', (): void => {
    
     const menus = (): void => {
@@ -23,4 +25,5 @@ window.addEventListener('load', (): void => {
     }
 
     menus();
+    quantityProduct();
 });
